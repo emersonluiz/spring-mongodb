@@ -15,7 +15,7 @@ public class Application implements CommandLineRunner {
 
     @Autowired
     private PersonRepository personRepository;
-    
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -24,7 +24,7 @@ public class Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         personRepository.deleteAll();
-        
+
         personRepository.save(new Person("Emerson", "Luiz", "Castro"));
         personRepository.save(new Person("Juca", "Santos", "Silva"));
         personRepository.save(new Person("Joca", "Luiz", "Silva"));
@@ -36,7 +36,7 @@ public class Application implements CommandLineRunner {
 
         System.out.println("\n");
 
-        Person person = personRepository.findOne(list.get(0).id);
+        Person person = personRepository.findOne(list.get(0).getId());
         System.out.println("Person: " + person.toString());
 
         System.out.println("\n");
